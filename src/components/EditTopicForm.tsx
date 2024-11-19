@@ -14,10 +14,10 @@ export default function EditTopicForm({
   initialTitle,
   initailDescription,
 }: EditTopicFormProps) {
-  const [title, setNewTitle] = useState(initialTitle)
-  const [description, setNewDescription] = useState(initailDescription)
+  const [title, setTitle] = useState(initialTitle)
+  const [description, setDescription] = useState(initailDescription)
   const router = useRouter()
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
       await updateTopic(id, title, description)
@@ -35,7 +35,7 @@ export default function EditTopicForm({
         className="border border-sky-800 p-4"
         placeholder="Topic Title"
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setNewTitle(e.target.value)
+          setTitle(e.target.value)
         }
         value={title}
       />
@@ -43,7 +43,7 @@ export default function EditTopicForm({
         className="border border-sky-800 p-4 h-32"
         placeholder="Topic Description"
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-          setNewDescription(e.target.value)
+          setDescription(e.target.value)
         }
         value={description}
       />

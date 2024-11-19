@@ -8,5 +8,5 @@ const topicSchema = new Schema(
     timestamps: true,
   }
 )
-const Topic = mongoose.models.Test || mongoose.model('Test', topicSchema)
+const Topic = mongoose.models.Topic || mongoose.model('Topic', topicSchema)
 export default Topic

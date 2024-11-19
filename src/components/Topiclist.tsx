@@ -20,7 +20,7 @@ export default function TopicsList({ topics }: TopicsListProps) {
       {topics.map((topic) => (
         <div
           key={topic._id}
-          className="p-4 bg-sky-200 border border-slate-300 my-3 flex justify-between gap-5 items-start"
+          className="p-4 bg-sky-200 border border-slate-300 my-3 flex justify-between gap-5 items-start text-black"
         >
           <div>
             <h2 className="text-2xl font-bold">{topic.title}</h2>

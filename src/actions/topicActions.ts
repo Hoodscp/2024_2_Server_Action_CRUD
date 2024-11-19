@@ -1,3 +1,4 @@
+'use server'
 import { convertDocToObj } from '@/libs/helpers'
 import connectMongoDB from '@/libs/mongodb'
 import Topic from '@/models/topic'

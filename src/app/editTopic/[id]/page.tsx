@@ -7,8 +7,12 @@ export default async function EditTopic({
 }: {
   params: { id: string }
 }) {
-  const { id } = await params
   const { topic } = await getTopic(params.id)
-  const { title, description } = topic
-  return <EditTopicForm id={id} title={title} description={description} />
+  return (
+    <EditTopicForm
+      id={topic._id}
+      initialTitle={topic.title}
+      initialDescription={topic.description}
+    />
+  )
 }

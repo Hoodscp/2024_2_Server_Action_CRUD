@@ -5,17 +5,17 @@ import React, { useState } from 'react'
 
 interface EditTopicFormProps {
   id: string
-  title: string
-  description: string
+  initialTitle: string
+  initailDescription: string
 }
 
 export default function EditTopicForm({
   id,
-  title,
-  description,
+  initialTitle,
+  initailDescription,
 }: EditTopicFormProps) {
-  const [newTitle, setNewTitle] = useState(title)
-  const [newDescription, setNewDescription] = useState(description)
+  const [title, setNewTitle] = useState(initialTitle)
+  const [description, setNewDescription] = useState(initailDescription)
   const router = useRouter()
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -37,7 +37,7 @@ export default function EditTopicForm({
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setNewTitle(e.target.value)
         }
-        value={newTitle}
+        value={title}
       />
       <textarea
         className="border border-sky-800 p-4 h-32"
@@ -45,7 +45,7 @@ export default function EditTopicForm({
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
           setNewDescription(e.target.value)
         }
-        value={newDescription}
+        value={description}
       />
       <button
         className="bg-sky-700 text-sky-400 font-bold px-6 py-3 w-fit rounded-md hover:bg-sky-900"

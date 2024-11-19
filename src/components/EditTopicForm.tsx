@@ -6,16 +6,16 @@ import React, { useState } from 'react'
 interface EditTopicFormProps {
   id: string
   initialTitle: string
-  initailDescription: string
+  initialDescription: string
 }
 
 export default function EditTopicForm({
   id,
   initialTitle,
-  initailDescription,
+  initialDescription,
 }: EditTopicFormProps) {
   const [title, setTitle] = useState(initialTitle)
-  const [description, setDescription] = useState(initailDescription)
+  const [description, setDescription] = useState(initialDescription)
   const router = useRouter()
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

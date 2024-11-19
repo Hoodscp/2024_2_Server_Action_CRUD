@@ -1,4 +1,4 @@
-import { getAllTopics } from '@/actions/topicAction'
+import { getAllTopics } from '@/actions/topicActions'
 import TopicsList from '@/components/Topiclist'
 
 export default async function Home() {

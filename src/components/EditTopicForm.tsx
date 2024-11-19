@@ -1,4 +1,5 @@
 'use client'
+import { updateTopic } from '@/actions/topicActions'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
@@ -19,16 +20,7 @@ export default function EditTopicForm({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      const res = await fetch(`/api/topics/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({ newTitle, newDescription }),
-      })
-      if (!res.ok) {
-        throw new Error('토픽 업데이트에 실패했습니다.')
-      }
+      await updateTopic(id, title, description)
       router.push('/')
       router.refresh()
     } catch (error) {

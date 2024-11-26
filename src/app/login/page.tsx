@@ -1,4 +1,4 @@
-import SignInButton from '@/components/SignInbutton'
+import SignInButton from '@/components/SignInButton'
 import React from 'react'
 export default function LoginPage() {
   return (

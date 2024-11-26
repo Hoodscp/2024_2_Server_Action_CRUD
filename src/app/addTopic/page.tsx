@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 import AddTopicForm from '@/components/AddTopicForm'
 export default function AddTopic() {
-  const { status, data: session } = useSession()
+  const { data: session } = useSession()
   if (!session) {
     redirect('/login')
   }

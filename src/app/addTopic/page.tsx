@@ -1,6 +1,6 @@
 'use client'
 import { useSession } from 'next-auth/react'
-import { redirect, useRouter } from 'next/navigation'
+import { redirect } from 'next/navigation'
 import AddTopicForm from '@/components/AddTopicForm'
 export default function AddTopic() {
   const { status, data: session } = useSession()

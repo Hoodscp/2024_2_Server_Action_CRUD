@@ -1,8 +1,14 @@
+'use client'
+import { useSession } from 'next-auth/react'
+import { redirect, useRouter } from 'next/navigation'
 import AddTopicForm from '@/components/AddTopicForm'
 export default function AddTopic() {
+  const { status, data: session } = useSession()
+  if (!session) {
+    redirect('/login')
+  }
   return (
     <div className="max-w-3xl mx-auto mt-8">
-      <h1 className="text-2xl font-bold mb-4">새 토픽 추가</h1>
       <AddTopicForm />
     </div>
   )

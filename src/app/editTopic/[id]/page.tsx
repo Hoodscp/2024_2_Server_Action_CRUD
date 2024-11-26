@@ -1,6 +1,8 @@
 import { getTopic } from '@/actions/topicActions'
 import EditTopicForm from '@/components/EditTopicForm'
 import React from 'react'
+import { auth } from '@/auth'
+import { redirect } from 'next/navigation'
 
 export default async function EditTopic({
   params,
@@ -8,6 +10,10 @@ export default async function EditTopic({
   params: { id: string }
 }) {
   const { topic } = await getTopic(params.id)
+  const session = await auth()
+  if (!session) {
+    redirect('/login')
+  }
   return (
     <EditTopicForm
       id={topic._id}
